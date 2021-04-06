@@ -43,8 +43,8 @@ class Train {
     arr[this->length - 1].prev = &arr[this->length - 2];
 
     for (int i = 1; i < this->length - 1; i++) {
-      bool light = srand() % 2;
-      if (light)
+      int light = srand() % 2;
+      if (light = 1)
         arr[i].on();
       else
         arr[i].off();
