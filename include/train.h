@@ -35,7 +35,7 @@ class Train {
     arr = new Cage[this->length];
     first = arr;
   }
-  Train(int len) {
+  explicit Train(int len) {
     this->setlen(len);
     arr[0].next = &arr[1];
     arr[0].prev = &arr[this->length - 1];
@@ -43,7 +43,7 @@ class Train {
     arr[this->length - 1].prev = &arr[this->length - 2];
 
     for (int i = 1; i < this->length - 1; i++) {
-      bool light = rand() % 2;
+      bool light = rand_r() % 2;
       if (light)
         arr[i].on();
       else
@@ -56,4 +56,4 @@ class Train {
 };
 int calculate_len(Cage *start);
 Cage* come_back(Cage *start, int steps);
-#endif // !TRAIN_H
+#endif  // !TRAIN_H
