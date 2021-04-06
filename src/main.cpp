@@ -1,10 +1,11 @@
-// Copyright 2021
-#include <iostream>
-#include <string>
-
+// Copyright 2021 ivanovd4
 #include "train.h"
+#include <iostream>
 
 int main() {
-  return 0;
+	srand(time(NULL));
+	int len = 1000;
+	Train train(len);
+	std::cout << calculate_len(train.first) << len << std::endl;
+	return 0;
 }
-
